@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const ShortUrl = require("./models/shortUrl");
+const port = process.env.PORT || 3000;
 const app = express();
 
 mongoose.connect("mongodb://127.0.0.1:27017/urlShortner", {
@@ -31,4 +32,5 @@ app.get("/:shortUrl",async (req,res) => {
   res.redirect(shortUrl.full)
 })
 
-app.listen( process.env.PORT || 8080, () => console.log("server is up at 8080"));
+app.listen(port, () => console.log("server is up at 3000"));
+
