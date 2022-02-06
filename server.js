@@ -31,4 +31,4 @@ app.get("/:shortUrl",async (req,res) => {
   res.redirect(shortUrl.full)
 })
 
-app.listen(8080, () => console.log("server is up at 8080"));
+app.listen( process.env.PORT || 8080, () => console.log("server is up at 8080"));
